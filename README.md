@@ -32,7 +32,7 @@ It includes **pose detection**, **keypoint tracking**, and **visualization** for
 1. **Clone the repo**
 
 ```bash
-git clone git@github.com:yourusername/exercise-repetition-analysis.git
+git clone https://github.com/neumann483/exercise-repetition-analysis.git
 cd exercise-repetition-analysis
 ```
 
