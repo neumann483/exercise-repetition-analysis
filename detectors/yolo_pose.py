@@ -1,3 +1,16 @@
+"""
+yolo_pose.py
+
+Performs pose estimation using YOLOv8-pose model (Ultralytics).
+
+Functiions:
+- detect_yolo_pose(): processes video input, extracts 17 keypoints
+per frame (x, y only).
+
+Note:
+- Does not return z or confidence - dummy values are added,
+can be altered if needed.
+"""
 from ultralytics import YOLO
 import cv2
 import numpy as np

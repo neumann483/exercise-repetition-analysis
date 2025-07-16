@@ -1,9 +1,20 @@
+"""
+main.py
+
+Entry point for running the exercise repetition pipeline.
+
+This script handles argument parsing, model selection
+(YOLO or Mediapipe), keypoint extraction,
+optional skeleton drawing and result saving.
+
+Run this script from the terminal using CLI flags.
+"""
 import argparse
 from detectors.yolo_pose import detect_yolo_pose
 from detectors.mediapipe_pose import detect_mediapipe_pose
 from utils.draw import draw_skeleton
 from utils.video import save_video
-from utils.save import save_keypoints_to_csv
+from utils.keypoint_utils import save_keypoints_to_csv
 
 
 def main():

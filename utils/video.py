@@ -1,3 +1,15 @@
+"""
+video.py
+
+Handles saving a list of frames (with or without skeleton overlays)
+into a video file at a specifies output path.
+
+Main function:
+- save_video(): takes a list of processed frames amd writes
+them to .mp4 using OpenCV.
+
+Used after keyppint detection and skeleton drawing is complete.
+"""
 import cv2
 
 

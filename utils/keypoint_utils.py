@@ -1,4 +1,16 @@
-# Save points to a CSV file
+"""
+keypoint_utils.py
+
+Contains utility functions for saving and loading(?) body keypoints.
+
+Functions:
+- save_keypoints_to_csv(): saves keypoints into a
+structured CSV file.
+- load_keypoints_from_csv(): (to be added) loads keypoints back
+ from CSV for analysis or visualization.
+
+Supports output for both MediaPipe and YOLOv8 models.
+"""
 import csv
 
 

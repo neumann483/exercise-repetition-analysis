@@ -1,3 +1,18 @@
+"""
+mediapipe_pose.py
+
+Performs pose estimation using MediaPipe's pose module.
+
+Functions:
+- detect_mediapipe_pose(): loads and processes a video frame-by-frame and extracts
+keypoints.
+Returns list of frames and structured keypoints.
+
+Note:
+- Produces 33 keypoints per frame with x, y, z and visibility
+(confidence).
+- No drawing or saving inside this script - handled externally.
+"""
 import cv2
 import time
 import numpy as np

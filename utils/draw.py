@@ -1,3 +1,15 @@
+"""
+Provides function to draw human pose skeletons on individual
+video frames.
+
+Supports:
+- MediaPipe format (33 keypoits, including visibility/confidence)
+- YOLOv8 format (117 keypoints, x/y only)
+
+Main function:
+- draw_skeleton(): applies lines between keypoints to visualize
+the pose.
+"""
 import cv2
 import mediapipe as mp
 
