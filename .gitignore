@@ -209,5 +209,6 @@ __marimo__/
 # Ignore all .mp4 and .avi files
 *.mp4
 *.avi
-
+*.mov
+*.csv
 

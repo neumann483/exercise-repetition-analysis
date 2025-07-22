@@ -23,7 +23,6 @@ def detect_yolo_pose(video_path: str) -> tuple[list[np.ndarray], list[dict]]:
 
     frames, keypoints_data = [], []
     frame_count = 0
-    t0 = time.time()
 
     print("[INFO] Started yolo pose detection...")
     while True:
@@ -56,6 +55,5 @@ def detect_yolo_pose(video_path: str) -> tuple[list[np.ndarray], list[dict]]:
 
     cap.release()
     print("[INFO] Finished yolo pose detection...")
-    print(f"FPS: {frame_count / (time.time()-t0):.2f}")
 
     return frames, keypoints_data

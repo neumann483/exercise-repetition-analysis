@@ -30,7 +30,6 @@ def detect_mediapipe_pose(video_path: str) -> tuple[list[np.ndarray], list[dict]
 
     frames, keypoints_data = [], []
     frame_count = 0
-    t0 = time.time()
 
     while cap.isOpened():
         ret, frame = cap.read()
@@ -61,7 +60,5 @@ def detect_mediapipe_pose(video_path: str) -> tuple[list[np.ndarray], list[dict]
         frame_count += 1
 
     cap.release()
-    print(f"FPS: {frame_count / (time.time()-t0):.2f}")
-
     return frames, keypoints_data
 

@@ -10,10 +10,11 @@ optional skeleton drawing and result saving.
 Run this script from the terminal using CLI flags.
 """
 import argparse
+import time
 from detectors.yolo_pose import detect_yolo_pose
 from detectors.mediapipe_pose import detect_mediapipe_pose
 from utils.draw import draw_skeleton
-from utils.video import save_video
+from utils.video import save_video, get_video_info
 from utils.keypoint_utils import save_keypoints_to_csv
 
 
@@ -24,6 +25,12 @@ def main():
     parser.add_argument('--output', type=str, help='Optional path to save annotated video')
     parser.add_argument('--save_csv', type=str, default='data/outputs/keypoints.csv', help='Path to save a keypoints CSV file')
     args = parser.parse_args()
+
+    start_time = time.time()
+
+    # Get the info of input video
+    input_video_info = get_video_info(args.input)
+    print(f"Input video info:\n{input_video_info}")
 
     # Choose between yolo and mediapipe and apply pose estimation
     if args.model == 'yolo':
@@ -47,6 +54,10 @@ def main():
     # Save keypoints to a CSV file
     if args.save_csv:
         save_keypoints_to_csv(keypoints, args.save_csv)
+
+    end_time = time.time()
+
+    print(f"Processing time: {end_time-start_time:.2f}s")
 
 
 if __name__ == '__main__':
