@@ -7,8 +7,11 @@ into a video file at a specifies output path.
 Main function:
 - save_video(): takes a list of processed frames amd writes
 them to .mp4 using OpenCV.
+- get_video_info(): retrieves information from video:
+ resolution, fps, amount of frames.
+- resize_video_frame(): resizes video frame to a needed resolution.
 
-Used after keyppint detection and skeleton drawing is complete.
+Used after keypoint detection and skeleton drawing is complete.
 """
 import cv2
 

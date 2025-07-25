@@ -8,23 +8,23 @@ from utils.draw import draw_skeleton
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
-INPUT_PATH = ROOT_DIR / "data" / "inputs" / "tricep_dips_18.mp4"
-OUTPUT_PATH = ROOT_DIR / "data" / "outputs" / "18.mp4"
-CSV_PATH = ROOT_DIR / "data" / "outputs" / "18.csv"
+INPUT_PATH = ROOT_DIR / "data" / "inputs" / "squat_12.mp4"
+OUTPUT_PATH = ROOT_DIR / "data" / "outputs" / "videos" / "12.mp4"
+CSV_PATH = ROOT_DIR / "data" / "outputs" / "csv" / "12.csv"
 
 info = get_video_info(INPUT_PATH)
 print(info)
 
 start_time = time.time()
 
-frames, keypoints = detect_yolo_pose(str(INPUT_PATH))
-#frames, keypoints = detect_mediapipe_pose(str(INPUT_PATH))
+#frames, keypoints = detect_yolo_pose(str(INPUT_PATH))
+frames, keypoints = detect_mediapipe_pose(str(INPUT_PATH))
 
 annotated_frames = []
 for frame, data in zip(frames, keypoints):
     frame_idx = data['frame_index']
     kps = data['keypoints']
-    annotated = draw_skeleton(frame, kps, "yolo")   # "mediapipe" or "yolo"
+    annotated = draw_skeleton(frame, kps, "mediapipe")   # "mediapipe" or "yolo"
     annotated_frames.append(annotated)
 
 print(f"[INFO] Saving annotated video to: {OUTPUT_PATH}")
